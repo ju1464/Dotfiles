@@ -1,0 +1,2 @@
+# Dotfiles
+Openbox configuration files.
