@@ -1,0 +1,7 @@
+Guardar en la ruta:
+
+$HOME/.conky/
+
+Cortar y pegar como root ConkyColors.ttf en:
+
+/usr/share/fonts/truetype/

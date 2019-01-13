@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<JWM>
+
+    <!-- The root menu. -->
+    <RootMenu onroot="123" height="0" labeled="true" label="----MENU----">
+        <Separator/>
+        <Program icon="file-manager"label="ADM. DE ARCHIVOS">thunar</Program>
+        <Program icon="firefox"label="NAVEGADOR WEB">firefox</Program>
+        <Program icon="gksu-root-terminal"label="TERMINAL">lxterminal</Program>
+        <Program icon="gedit"label="EDITOR DE TEXTO">geany</Program>
+        <Separator/>
+        <Menu icon="nm-signal-100" label="RED">
+				<Program icon="transmission" label="TORRENTS">transmission-gtk</Program>
+				<Program icon="murrine-configurator" label="MEGASYNC">/usr/share/playonlinux/playonlinux --run "MEGAsync"</Program>
+				<Program icon="skype" label="VIDEOLLAMADA">/usr/bin/skypeforlinux</Program>
+		</Menu>
+        <Menu icon="applications-multimedia" label="MULTIMEDIA">
+				<Menu icon="applications-graphics" label="IMAGEN">
+					<Program icon="colors" label="EDITAR IMAGEN">/usr/share/playonlinux/playonlinux --run "Photoshop"</Program>
+					<Program icon="camera" label="CAP. PANTALLA">xfce4-screenshooter</Program>
+					<Program icon="giver" label="ESCANER">simple-scan</Program>
+				</Menu>
+				<Menu icon="arts" label="SONIDO">
+					<Program icon="atunes" label="REPRODUCTOR DE MUSICA">lxterminal -e mocp</Program>
+					<Program icon="soundconverter" label="CONVERSOR DE AUDIO">soundconverter</Program>
+					<Program icon="burner" label="GRABADOR DE CD'S">xfburn</Program>
+					<Program icon="easytags" label="ETIQUETAS MP3">puddletag</Program>
+					<Program icon="aumix" label="NORMALIZAR AUDIO">/usr/share/playonlinux/playonlinux --run "MP3GainGUI"</Program>
+					<Menu icon="gnome-grecord" label="PRODUCCION MUSICAL">
+						<Program icon="audacity" label="EDITOR DE AUDIO">audacity</Program>
+						<Program icon="gnome-alsamixer-icon" label="SECUENCIADOR DE RITMOS">hydrogen</Program>
+						<Program icon="ardour" label="ESTACION DE AUDIO">ardour5</Program>
+						<Program icon="internet-radio-new" label="AMPLIFICADOR VIRTUAL">guitarix</Program>
+					</Menu>
+				</Menu>
+				<Menu icon="camera-video" label="VIDEO">
+					<Program icon="avidemux" label="CONVERSOR DE VIDEO">ghb</Program>
+					<Program icon="smplayer" label="HERRAMIENTAS MKV">mkvtoolnix-gui</Program>
+					<Program icon="gnome-subtitles" label="EDITOR DE SUBTITULOS">gnome-subtitles</Program>
+				</Menu>
+		</Menu>
+		<Menu icon="gkdebconf" label="CONFIGURACION">
+			<Menu icon="icon" label="GESTOR DE VENTANAS">
+				<Restart label="REINICIAR" icon="gnome-session-reboot.svg"/>
+				<Program icon="kedit" label="EDITAR">geany ~/.jwmrc</Program>
+			</Menu>
+			<Menu icon="gthumb" label="APARIENCIA">
+				<Program icon="contact" label="PANTALLA DE INICIO">lxterminal -e sudo -i lightdm-gtk-greeter-settings-pkexec</Program>
+				<Program icon="gnome-settings-theme" label="VENTANAS E ICONOS">lxappearance</Program>
+				<Program icon="gtranslator" label="CREAR VENTANAS"/>oomox-gui
+				<Program icon="colors" label="COLOR DE ICONOS">~/.local/share/icons/ACYL_Icon_Theme_0.9.4/AnyColorYouLike</Program>
+			</Menu>
+			<Program icon="video-display" label="MONITOR">lxrandr</Program>
+			<Program icon="MySQLIcon_QueryBrowser_48x48" label="ENERGIA">xfce4-power-manager-settings</Program>
+		</Menu>
+		<Menu icon="gnome-robots" label="SOFTWARE">
+			<Program icon="synaptic" label="GESTOR DE PAQUETES">lxterminal -e sudo -i synaptic-pkexec</Program>
+			<Program icon="update-manager" label="ACTUALIZAR">update-manager</Program>
+			<Program icon="wine" label="SOFTWARE WINDOWS">playonlinux</Program>
+			<Program icon="vmware" label="EMULADOR VIRTUAL">virtualbox</Program>
+		</Menu>
+		<Menu icon="opera-widget-manager" label="MANTENIMIENTO">
+			<Program icon="wallpaper" label="LIMPIEZA USUARIO">bleachbit</Program>
+			<Program icon="wallpaper" label="LIMPIEZA ROOT">lx terminal -e sudo -i bleachbit</Program>
+			<Program icon="drive-harddisk" label="DISCOS DUROS">gnome-disks</Program>
+			<Program icon="wxcas" label="GESTOR DE TAREAS">lxtask</Program>
+		</Menu>
+		<Separator/>
+		<Menu icon="xfsm-switch" label="CAMBIAR SESION">
+			<Exit label="OPENBOX" icon="glade">openbox-session</Exit>
+			<Exit label="FLUXBOX" icon="glade">startfluxbox</Exit>
+			<Exit label="PEKWM" icon="glade">pekwm</Exit>
+			<Exit label="i3" icon="glade">i3</Exit>
+			<Exit label="CERRAR SESION" confirm="true" icon="gnome-log-out"/>
+		</Menu>
+		<Program icon="gnome-shutdown" label="SALIR">lxsession-logout</Program>
+    </RootMenu>
+    
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Option>tiled</Option>
+        <Option>aerosnap</Option>
+    </Group>
+    <Group>
+        <Class>Pidgin</Class>
+        <Option>sticky</Option>
+    </Group>
+    <Group>
+        <Name>xterm</Name>
+        <Option>vmax</Option>
+    </Group>
+    <Group>
+        <Name>xclock</Name>
+        <Option>drag</Option>
+        <Option>notitle</Option>
+    </Group>
+
+    <!-- Tray at the bottom. -->
+    <Tray x="1" y="-1" height="24" width="0" layout="horizontal" autohide="off">
+
+        <Spacer width="4"/>
+        <TrayButton icon="catfish" label="APPS">exec:xfce4-appfinder</TrayButton>
+        <Spacer width="4"/>
+
+        <TaskList maxwidth="256"/>
+        
+        <Pager labeled="false"/>
+        <Spacer width="4"/>
+
+        <Dock spacing="2"/>
+        <Spacer width="4"/>
+        
+        <Clock format="%H:%M"><Button mask="123">exec:cal</Button></Clock>
+		<Spacer width="4"/>
+		
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle>
+        <Font>Sans-9</Font>
+        <Width>4</Width>
+        <Height>21</Height>
+        <Corner>0</Corner>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#444444</Background>
+        <Outline>#444444</Outline>
+        <Opacity>0.1</Opacity>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#A01515</Background>
+            <Outline>#A01515</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+    <TrayStyle group="true" list="all">
+        <Font>Sans-14</Font>
+        <Background>#E6E6E6</Background>
+        <Foreground>#A01515</Foreground>
+        <Outline>#E6E6E6</Outline>
+        <Opacity>0.90</Opacity>
+    </TrayStyle>
+    <TaskListStyle>
+      <Font>Sans-14</Font>
+      <Active>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#A01515</Background>
+      </Active>
+      <Foreground>#A01515</Foreground>
+      <Background>#E6E6E6</Background>
+    </TaskListStyle>
+    <PagerStyle>
+        <Outline>#A01515</Outline>
+        <Foreground>#444444</Foreground>
+        <Background>#E6E6E6</Background>
+        <Text>#FFFFFF</Text>
+        <Active>
+            <Foreground>#A52A2A</Foreground>
+            <Background>#A01515</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle>
+        <Font>Sans-10</Font>
+        <Foreground>#A01515</Foreground>
+        <Background>#E6E6E6</Background>
+        <Outline>#E6E6E6</Outline>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#A01515</Background>
+        </Active>
+        <Opacity>0.90</Opacity>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>Sans-9</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#999999</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found.
+         IconPath can be listed multiple times to allow searching
+         for icons in multiple paths.
+      -->
+    <IconPath>/usr/share/icons</IconPath>
+    <IconPath>/usr/share/pixmaps</IconPath>
+    <IconPath>
+        /usr/local/share/jwm
+    </IconPath>
+    
+    <StartupCommand>
+	xfce4-volumed &
+	nm-applet &
+	pnmixer &
+	xcompmgr -cCFf -l2 -t1 -r3 -o.20 -D3 -n &
+	xfce4-power-manager-plugins &
+	killall wbar &
+	killall volumeicon &
+	</StartupCommand>
+	
+	<RestartCommand>
+   
+    </RestartCommand>
+	
+	<ShutdownCommand>
+	killall -9 xfce4-volumed &> /dev/null
+    killall -9 nm-applet &> /dev/null
+    killall -9 pnmixer &> /dev/null
+    killall -9 xcompmgr &> /dev/null
+    killall -9 xfce4-power-manager-plugins &> /dev/null 
+    </ShutdownCommand>
+
+    <!-- Virtual Desktops -->
+    <!-- Desktop tags can be contained within Desktops for desktop names. -->
+    <Desktops width="3" height="1">
+        <!-- Default background. Note that a Background tag can be
+              contained within a Desktop tag to give a specific background
+              for that desktop.
+         -->
+        <Background type="command">nitrogen --restore</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>click</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode coordinates="off">opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode coordinates="off">opaque</ResizeMode>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+   
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="#">desktop#</Key>
+    <Key mask="A" key="F1">root:1</Key>
+    <Key mask="A" key="F2">window</Key>
+    <Key mask="A" key="F10">maximize</Key>
+    <Key mask="C" key="Right">rdesktop</Key>
+    <Key mask="C" key="Left">ldesktop</Key>
+    
+    <Key mask="4" key="n">exec:firefox</Key>
+    <Key mask="4" key="c">exec:thunar</Key>
+    <Key mask="4" key="t">exec:lxterminal</Key>
+    <Key mask="4" key="b">exec:xfce4-appfinder</Key>
+    <Key mask="4" key="e">exec:geany</Key>
+    <Key mask="4" key="g">exec:gksu synaptic-pkexec</Key>
+    <Key mask="4" key="d">exec:transmission-gtk</Key>
+    <Key mask="4" key="m">exec:lxterminal -e mocp</Key>
+    <Key mask="4" key="o">exec:pavucontrol</Key>
+    <Key mask="4" key="p">exec:/usr/share/playonlinux/playonlinux --run "Photoshop" %F</Key>
+	<Key mask="4" key="a">exec:audacity</Key>
+	<Key mask="4" key="h">exec:hydrogen</Key>
+	<Key mask="4" key="v">exec:virtualbox</Key>
+	<Key mask="4" key="Escape">exec:xkill</Key>
+	<Key mask="4" key="r">exec:shutdown -r now</Key>
+	<Key mask="4" key="q">exec:shutdown -h now</Key>
+	
+</JWM>

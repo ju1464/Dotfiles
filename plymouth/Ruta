@@ -1,0 +1,16 @@
+
+Copiar la carpeta del tema como root en:
+
+/usr/share/plymouth/themes/
+
+ -Abrir terminal y activar el tema:
+
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/mugre-logo/mugre-logo.plymouth 100
+
+sudo update-alternatives --config default.plymouth
+
+ -Seleccionamos el tema elegido
+ 
+sudo update-initramfs -u
+
+sudo reboot

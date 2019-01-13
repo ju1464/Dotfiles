@@ -1,0 +1,97 @@
+# Menu config for pekwm
+
+# Variables
+INCLUDE = "vars"
+
+RootMenu = "MENU" {
+	Entry = "EJECUTAR.." { Actions = "ShowCmdDialog" }
+	Entry = "ADM. ARCHIVOS" { Actions = "Exec thunar" }
+	Entry = "NAVEGADOR WEB" { Actions = "Exec firefox" }
+	Entry = "TERMINAL" { Actions = "Exec $TERM &" }
+	Entry = "EDITOR DE TEXTO" { Actions = "Exec geany" }
+	
+	Separator {}
+	
+	Submenu = "RED" {
+		Entry = "TORRENTS" { Actions = "Exec transmission-gtk" }
+		Entry = "MEGASYNC" { Actions = "Exec /usr/share/playonlinux/playonlinux --run "MEGAsync"" }
+		Entry = "VIDEOLLAMADA" { Actions = "Exec /usr/bin/skypeforlinux" }
+	}
+	
+	Submenu = "MULTIMEDIA" {
+		Submenu = "IMAGEN" {
+		Entry = "EDITAR IMAGEN" { Actions = "Exec /usr/share/playonlinux/playonlinux --run "Photoshop"" }
+		Entry = "CAP. PANTALLA" { Actions = "Exec xfce4-screenshooter" }
+		Entry = "ESCANER" { Actions = "Exec simple-scan" }
+		}
+		
+		Submenu = "SONIDO" {
+		Entry = "REPRODUCTOR DE MUSICA" { Actions = "Exec lxterminal -e mocp" }
+		Entry = "GRABADOR DE CD'S" { Actions = "Exec xfburn" }
+		Entry = "ETIQUETAS MP3" { Actions = "Exec puddletag" }
+		Entry = "NORMALIZAR AUDIO" { Actions = "Exec /usr/share/playonlinux/playonlinux --run "MP3GainGUI"" }
+		Entry = "CONVERSOR DE AUDIO" { Actions = "Exec soundconverter" }
+			Submenu = "PRODUCCION MUSICAL" {
+			Entry = "EDITOR DE AUDIO" { Actions = "Exec audacity" }
+			Entry = "SECUENCIADOR DE RITMOS" { Actions = "Exec hydrogen" }
+			Entry = "ESTACION DE AUDIO" { Actions = "Exec ardour5" }
+			Entry = "AMPLIFICADOR VIRTUAL" { Actions = "Exec guitarix" }
+			}
+		}
+		
+		Submenu = "VIDEO" {
+		Entry = "CONVERSOR DE VIDEO" { Actions = "Exec ghb" }
+		Entry = "HERRAMIENTAS MKV" { Actions = "Exec mkvtoolnix-gui" }
+		Entry = "EDITOR DE SUBTITULOS" { Actions = "Exec gnome-subtitles" }
+		}
+	}
+
+	Submenu = "CONFIGURACION" {
+		Submenu = "GESTOR DE VENTANAS" {
+		Entry = "RECARGAR" { Actions = "Reload" }
+		Entry = "REINICIAR" { Actions = "Restart" }
+			Submenu = "EDITAR" {
+			Entry = "INICIO" { Actions = "Exec geany ~/.pekwm/start" }
+			Entry = "MENU" { Actions = "Exec geany ~/.pekwm/menu" }
+			Entry = "RATON" { Actions = "Exec geany ~/.pekwm/mouse" }
+			Entry = "CONFIGURACION" { Actions = "Exec geany ~/.pekwm/config" }
+			Entry = "ATAJOS DE TECLADO" { Actions = "Exec geany ~/.pekwm/keys" }
+			Entry = "VENTANA" { Actions = "Exec geany ~/.pekwm/themes/Minimalist/theme" }
+			}
+			
+			Submenu = "TEMAS" {
+			Entry { Actions = "Dynamic $_PEKWM_SCRIPT_PATH/pekwm_themeset.sh ~/.pekwm/themes" }
+			}
+		}
+	
+		Entry = "PANTALLA DE INICIO" { Actions = "Exec lxterminal -e sudo -i lightdm-gtk-greeter-settings-pkexec" }
+		Entry = "MONITOR" { Actions = "Exec lxrandr" }
+		Entry = "ENERGIA" { Actions = "Exec xfce4-power-manager-settings" }
+	}
+
+	Submenu = "SOFTWARE" {
+		Entry = "GESTOR DE PAQUETES" { Actions = "Exec lxterminal -e sudo -i synaptic-pkexec" }
+		Entry = "ACTUALIZAR" { Actions = "Exec update-manager" }
+		Entry = "SOFTWARE DE WINDOWS" { Actions = "Exec playonlinux" }
+		Entry = "EMULADOR VIRTUAL" { Actions = "Exec virtualbox" }
+	}
+	
+	Submenu = "MANTENIMIENTO" {
+		Entry = "LIMPIEZA USUARIO" { Actions = "Exec bleachbit" }
+		Entry = "LIMPIEZA ROOT" { Actions = "Exec lxterminal -e sudo -i bleachbit" }
+		Entry = "DISCOS DUROS" { Actions = "Exec gnome-disks" }
+		Entry = "GESTOR DE TAREAS" { Actions = "Exec lxtask" }
+	}
+
+	Separator {}
+	
+	Submenu = "CAMBIAR SESION" {
+		Entry = "OPENBOX" { Actions = "RestartOther /usr/bin/openbox-session" }
+		Entry = "FLUXBOX" { Actions = "RestartOther /usr/bin/startfluxbox" }
+		Entry = "JWM" { Actions = "RestartOther /usr/bin/jwm" }
+		Entry = "i3" { Actions = "RestartOther /usr/bin/i3" }
+		Entry = "CERRAR SESION" { Actions = "Exit" }
+	}
+	
+	Entry = "SALIR" { Actions = "Exec lxsession-logout" }
+}

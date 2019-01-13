@@ -1,0 +1,4 @@
+Lanzar primero el escritorio i3 para responder el i3 wizard con la tecla windows
+y que genere el archivo de config en $HOME/.config/i3 
+
+reemplazar el archivo creado por el de esta carpeta

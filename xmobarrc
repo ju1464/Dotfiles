@@ -1,0 +1,30 @@
+Config { font = "xft:Sans:size=9"
+       , additionalFonts = []
+       , bgColor = "#05160F"
+       , fgColor = "white"
+       , alpha = 255
+       , textOffset = -1
+       , iconOffset = -1
+       , position = Static { xpos = 8 , ypos = 742 , width = 1350 , height = 22 }
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Com "uname" ["-s","-r"] "" 36000
+					, Run Uptime ["-t", "On <hours>h <minutes>m <seconds>s"] 1
+					, Run Cpu ["-L","3","-H","50","--low","white","--normal","white","--high","red"] 10
+					, Run Memory ["-t","Mem: <usedratio>%"] 10
+					, Run Swap ["-t","Swap: <usedratio>%"] 10
+                    , Run Battery["-L","50","-H","75","--high","white","--normal","white", "--low", "red"] 10
+                    , Run Weather "GCLP" ["-t","<station> <tempC>ºC","-L","18","-H","25","--normal","white","--high","red","--low","white"] 36000
+					, Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+					, Run DiskU [("/", "Hdd <usedp>% <free>")] [] 20
+					, Run DynNetwork ["-t", "<dev> <rx>KB <tx>KB"] 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %uname% | %uptime% | %disku% | %cpu% | %memory% | %swap% | %battery% | }{ | %dynnetwork% | %GCLP% | %date% "
+       }

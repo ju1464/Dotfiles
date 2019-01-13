@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Mugre Logo
+Description=A theme that features a background with a logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/mugre-logo
+ScriptFile=/usr/share/plymouth/themes/mugre-logo/mugre-logo.script

@@ -1,0 +1,92 @@
+use_xft yes
+xftfont Dejavu:size=9
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 90
+
+double_buffer yes
+minimum_size 0 0
+maximum_width 225
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+border_width 1
+default_color white
+default_shade_color white
+default_outline_color white
+alignment top_left
+gap_x 10
+gap_y 40
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer none
+
+color1 white
+default_bar_size 225 6
+default_graph_size 225 20
+
+minimum_size 0 0
+TEXT
+#${image $HOME/.conky/imagenes/satan-inside.png -s 50x50 -p 82,4}
+${font Dejavu: size=20}${color1}${alignc}Timugre OS
+${color}${voffset -10}${hr}${font Dejavu: size=9}
+${color1}PROCESOS: ${running_processes}/${processes}${GOTO 136}CPU${alignr}MEM
+
+ ${top name 1}${GOTO 130}${top cpu 1}${alignr}${top mem 1}
+ ${top name 2}${GOTO 130}${top cpu 2}${alignr}${top mem 2}
+ ${top name 3}${GOTO 130}${top cpu 3}${alignr}${top mem 3}
+ ${top name 4}${GOTO 130}${top cpu 4}${alignr}${top mem 4}
+${color}${stippled_hr 3}${color1}
+${alignc}ATAJOS DE TECLADO
+${voffset -5}${color}${stippled_hr 3}${color1}
+${font Liberation Mono: size=10}Navegador Web ${color}${alignr}Super-n
+${color1}Adm. de Archivos ${color}${alignr}Super-c
+${color1}Terminal ${color}${alignr}Super-t
+${color1}Editor de Texto ${color}${alignr}Super-e
+${color1}Buscar APPS ${color}${alignr}Super-b
+${color1}Software ${color}${alignr}Super-g
+${color1}Descarga Torrent ${color}${alignr}Super-d
+${color1}Musica ${color}${alignr}Super-m
+${color1}Control de Audio ${color}${alignr}Super-o
+${color1}Editor de Imagen ${color}${alignr}Super-p
+${color1}Editor de Audio ${color}${alignr}Super-a
+${color1}Bateria Virtual ${color}${alignr}Super-h
+${color1}Emulador Virtual ${color}${alignr}Super-v
+${color1}Matar Proceso ${color}${alignr}Super-Escape
+${color1}Reiniciar ${color}${alignr}Ctrl-Super-r
+${color1}Apagar ${color}${alignr}Ctrl-Super-a
+${voffset -3}${hr}${color1}
+${if_existing /proc/net/route wlo1}${font Dejavu: size=9}${color1}WIFI${alignc} ${wireless_essid}${alignr}(${wireless_link_qual wlo1}%)
+${color}${wireless_link_bar wlo1}${color1}
+${alignc}${addr wlo1}
+${font ConkyColors: size=14}x${font Dejavu: size=9} ${upspeed wlo1}${alignr}${downspeed wlo1}${font ConkyColors: size=14}w${font Dejavu: size=9}
+${upspeedgraph wlo1 20,100 FFFFFF FFFFFF}${alignr}${downspeedgraph wlo1 20,100 FFFFFF FFFFFF}
+Total:${totaldown wlo1}${alignr}Total:${totalup wlo1}${endif}
+${if_existing /proc/net/route eno1}${font Dejavu: size=9}${color1}INTERNET${alignr}${wireless_essid}
+${color}${wireless_link_bar eno1}${color1}
+${alignr}${addr eno1}
+Subida:${upspeed eno1}${alignr}Bajada:${downspeed eno1}
+${upspeedgraph eno1 20,100 FFFFFF FFFFFF}${alignr}${downspeedgraph eno1 20,100 FFFFFF FFFFFF}
+Total: ${totaldown eno1}${alignr}Total: ${totalup eno1}${endif}
+${color}${voffset -10}${hr}${color1}
+#${if_running mocp}
+MUSICA${alignr}${moc_state}
+${color}${execbar mocp -Q '%cs/%ts*100' | bc -l}${color1}
+${moc_curtime}${alignr}${moc_totaltime}
+${alignc}${moc_artist}
+${alignc}${moc_song}
+${alignc}${moc_album}
+#${endif}
+

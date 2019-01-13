@@ -1,0 +1,56 @@
+use_xft yes
+xftfont Liberation Mono: size=10
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 90
+
+double_buffer yes
+minimum_size 0 0
+maximum_width 400
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+border_width 1
+default_color white
+default_shade_color white
+default_outline_color white
+alignment bottom_right
+gap_x 10
+gap_y 50
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer none
+
+color1 lightgreen
+
+minimum_size 0 0
+TEXT
+${color1}Navegador Web ${color}${alignr}Super-n
+${color1}Adm. de Archivos ${color}${alignr}Super-c
+${color1}Terminal ${color}${alignr}Super-t
+${color1}Editor de Texto ${color}${alignr}Super-e
+${color1}Buscar APPS ${color}${alignr}Super-b
+${color1}Software ${color}${alignr}Super-g
+${color1}Descarga Torrent ${color}${alignr}Super-d
+${color1}Musica ${color}${alignr}Super-m
+${color1}Control de Audio ${color}${alignr}Super-o
+${color1}Editor de Imagen ${color}${alignr}Super-p
+${color1}Editor de Audio ${color}${alignr}Super-a
+${color1}Bateria Virtual ${color}${alignr}Super-h
+${color1}Emulador Virtual ${color}${alignr}Super-v
+${color1}Matar Proceso ${color}${alignr}Super-Escape
+${color1}Cerrar Sesion ${color}${alignr}Ctrl-Super-s
+${color1}Reiniciar ${color}${alignr}Ctrl-Super-r
+${color1}Apagar ${color}${alignr}Ctrl-Super-a

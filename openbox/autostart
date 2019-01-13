@@ -1,0 +1,27 @@
+#
+# Inicio sesion Openbox
+# Ruta /usuario/.config/openbox/autostart
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/x86_64-linux-gnu/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/x86_64-linux-gnu/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+#xfce4-power-manager-settings &
+#xfce4-volumed &
+nitrogen --restore &
+tint2 &
+xmobar &
+compton &
+sleep 1s && volumeicon &
+sleep 1s && nm-applet &
+sleep 2s && conky -c ~/.conky/conkycalendariorc &
+sleep 2s && conky -c ~/.conky/conkymusicarc &
+sleep 3s && conky -c ~/.conky/conkyatajosrc &
+sleep 3s && conky -c ~/.conky/conkyprocesosrc

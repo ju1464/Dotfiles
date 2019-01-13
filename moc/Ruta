@@ -1,0 +1,22 @@
+Antes de nada abrir y cerrar moc para crear carpetas en $HOME
+
+ir a:
+
+/usr/share/doc/moc/examples/ 
+
+y copiar los archivos:
+
+config.example.gz y keymap.example.gz
+
+Copiarlos en: $HOME/.moc/
+
+Descomprimir cambiar el nombre a config y keymap y borrar archivos .gz
+
+Abrir y cerrar moc
+
+Copiar los archivos descargados en la carpeta:
+
+$HOME/.moc
+
+Reemplazar todo lo que pida
+

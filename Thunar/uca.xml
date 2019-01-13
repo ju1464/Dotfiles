@@ -1,0 +1,71 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Abrir terminal aquí</name>
+	<unique-id>1535379946725941-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Ejemplo de una acción personalizada</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>gksu-root-terminal</icon>
+	<name>Abrir directorio como root</name>
+	<unique-id>1537917774085907-3</unique-id>
+	<command>lxterminal -e sudo thunar %F</command>
+	<description>Abrir directorio como root</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>edit-clear-all</icon>
+	<name>Editar imagen</name>
+	<unique-id>1537917802416415-4</unique-id>
+	<command>/usr/share/playonlinux/playonlinux --run &quot;Photoshop&quot; %f</command>
+	<description>Editar imagen</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>media-playback-start</icon>
+	<name>Reproducir</name>
+	<unique-id>1537917706808285-1</unique-id>
+	<command>lxterminal -e mocp %d</command>
+	<description>Reproducir</description>
+	<patterns>*</patterns>
+	<audio-files/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Crear enlace simbólico</name>
+	<unique-id>1537917744290964-2</unique-id>
+	<command>ln -s %f &apos;%n (enlace)&apos; </command>
+	<description>Crear enlace simbólico</description>
+	<patterns>*</patterns>
+	<directories/>
+	<image-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>filefind</icon>
+	<name>Buscar en esta carpeta</name>
+	<unique-id>1543617675700851-3</unique-id>
+	<command>catfish --path=%f</command>
+	<description>Buscar archivos dentro de esta carpeta</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>document-print</icon>
+	<name>Print file/s</name>
+	<unique-id>1543617675700915-4</unique-id>
+	<command>thunar-print %F</command>
+	<description>Send one or multiple files to the default printer</description>
+	<patterns>*.asc;*.brf;*.css;*.doc;*.docm;*.docx;*.dotm;*.dotx;*.fodg;*.fodp;*.fods;*.fodt;*.gif;*.htm;*.html;*.jpe;*.jpeg;*.jpg;*.odb;*.odf;*.odg;*.odm;*.odp;*.ods;*.odt;*.otg;*.oth;*.otp;*.ots;*.ott;*.pbm;*.pdf;*.pgm;*.png;*.pnm;*.pot;*.potm;*.potx;*.ppm;*.ppt;*.pptm;*.pptx;*.rtf;*.shtml;*.srt;*.text;*.tif;*.tiff;*.txt;*.xbm;*.xls;*.xlsb;*.xlsm;*.xlsx;*.xltm;*.xltx;*.xpm;*.xwd</patterns>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+</actions>

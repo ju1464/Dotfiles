@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<separator label="MENU"/>
+		<menu execute="~/.config/openbox/pipemenus/thunarbookmarks" id="pipe-7358" label="ADM. ARCHIVOS"/>
+		<item label="NAVEGADOR WEB">
+			<action name="Execute">
+				<execute>firefox</execute>
+			</action>
+		</item>
+		<item label="TERMINAL">
+			<action name="Execute">
+				<execute>lxterminal</execute>
+			</action>
+		</item>
+		<!-- This requires the presence of the 'menu' package to work -->
+		<menu execute="~/.config/openbox/pipemenus/obmocmenu" id="pipe-78539" label="MUSICA"/>
+		<item label="EDITOR DE TEXTO">
+			<action name="Execute">
+				<execute>geany</execute>
+			</action>
+		</item>
+		<separator label="APPS"/>
+		<menu id="root-menu-83626" label="RED">
+			<item label="TORRENTS">
+				<action name="Execute">
+					<execute>transmission-gtk</execute>
+				</action>
+			</item>
+			<item label="NUBE">
+				<action name="Execute">
+					<execute>/usr/share/playonlinux/playonlinux --run &quot;MEGAsync&quot; %F</execute>
+				</action>
+			</item>
+			<item label="ESCANEAR REDES">
+				<action name="Execute">
+					<execute>lxterminal -e sudo linssid</execute>
+				</action>
+			</item>
+			<item label="VIDEOLLAMADA">
+				<action name="Execute">
+					<execute>/usr/bin/skypeforlinux</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-525313" label="MULTIMEDIA">
+			<menu id="root-menu-525313-645332" label="IMAGEN">
+				<item label="EDITOR VECTORIAL">
+					<action name="Execute">
+						<execute>inkscape</execute>
+					</action>
+				</item>
+				<item label="EDITOR DE IMAGEN">
+					<action name="Execute">
+						<execute>/usr/share/playonlinux/playonlinux --run &quot;Photoshop&quot; %F</execute>
+					</action>
+				</item>
+				<item label="CAPTURAR PANTALLA">
+					<action name="Execute">
+						<execute>xfce4-screenshooter</execute>
+					</action>
+				</item>
+				<item label="ESCANEAR">
+					<action name="Execute">
+						<execute>simple-scan</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="root-menu-525313-21118" label="SONIDO">
+				<item label="CONVERSOR DE AUDIO">
+					<action name="Execute">
+						<execute>soundconverter</execute>
+					</action>
+				</item>
+				<item label="NORMALIZAR MP3">
+					<action name="Execute">
+						<execute>/usr/share/playonlinux/playonlinux --run &quot;MP3GainGUI&quot; %F</execute>
+					</action>
+				</item>
+				<item label="GRABADOR DE CD'S">
+					<action name="Execute">
+						<execute>xfburn</execute>
+					</action>
+				</item>
+				<item label="ETIQUETAS MP3">
+					<action name="Execute">
+						<execute>puddletag</execute>
+					</action>
+				</item>
+				<menu id="root-menu-525313-21118-964040" label="PRODUCCION MUSICAL">
+					<item label="EDITOR DE AUDIO">
+						<action name="Execute">
+							<execute>audacity</execute>
+						</action>
+					</item>
+					<item label="SECUENCIADOR DE RITMOS">
+						<action name="Execute">
+							<execute>hydrogen</execute>
+						</action>
+					</item>
+					<item label="ESTACION DE AUDIO">
+						<action name="Execute">
+							<execute>ardour5</execute>
+						</action>
+					</item>
+					<item label="AMPLIFICADOR VIRTUAL">
+						<action name="Execute">
+							<execute>guitarix</execute>
+						</action>
+					</item>
+				</menu>
+			</menu>
+			<menu id="root-menu-525313-782733" label="VIDEO">
+				<item label="CONVERSOR DE VIDEO">
+					<action name="Execute">
+						<execute>ghb</execute>
+					</action>
+				</item>
+				<item label="HERRAMIENTAS MKV">
+					<action name="Execute">
+						<execute>mkvtoolnix-gui </execute>
+					</action>
+				</item>
+			</menu>
+		</menu>
+		<menu id="root-menu-841349" label="CONFIGURACION">
+			<menu id="root-menu-841349-301415" label="GESTOR DE VENTANAS">
+				<item label="REINICIAR">
+					<action name="Restart"/>
+				</item>
+				<menu id="root-menu-841349-301415-632617" label="OPENBOX">
+					<item label="PREFERENCIAS">
+						<action name="Execute">
+							<execute>obconf</execute>
+						</action>
+					</item>
+					<item label="AUTOSTART">
+						<action name="Execute">
+							<execute>geany ~/.config/openbox/autostart</execute>
+						</action>
+					</item>
+					<item label="MENU.XML">
+						<action name="Execute">
+							<execute>geany ~/.config/openbox/menu.xml</execute>
+						</action>
+					</item>
+					<item label="RC.XML">
+						<action name="Execute">
+							<execute>geany ~/.config/openbox/rc.xml</execute>
+						</action>
+					</item>
+					<item label="THEMERC">
+						<action name="Execute">
+							<execute>geany ~/.themes/MiOpenboxTheme/openbox-3/themerc</execute>
+						</action>
+					</item>
+				</menu>
+				<menu id="root-menu-841349-301415-842616" label="CONKY">
+					<item label="CALENDARIO">
+						<action name="Execute">
+							<execute>geany ~/.conky/conkycalendariorc</execute>
+						</action>
+					</item>
+					<item label="MUSICA">
+						<action name="Execute">
+							<execute>geany ~/.conky/conkymusicarc</execute>
+						</action>
+					</item>
+					<item label="ATAJOS">
+						<action name="Execute">
+							<execute>geany ~/.conky/conkyatajosrc</execute>
+						</action>
+					</item>
+					<item label="PROCESOS">
+						<action name="Execute">
+							<execute>geany ~/.conky/conkyprocesosrc</execute>
+						</action>
+					</item>
+				</menu>
+				<menu id="root-menu-841349-301415-332616" label="TINT2">
+					<item label="TINT2RC">
+						<action name="Execute">
+							<execute>geany ~/.config/tint2/tint2rc</execute>
+						</action>
+					</item>
+				</menu>
+				<menu id="root-menu-841349-301415-862614" label="MOC">
+					<item label="CONFIG">
+						<action name="Execute">
+							<execute>geany ~/.moc/config</execute>
+						</action>
+					</item>
+					<item label="MY THEME">
+						<action name="Execute">
+							<execute>geany ~/.moc/themes/My_Theme</execute>
+						</action>
+					</item>
+					<item label="MOC LIMPIO">
+						<action name="Execute">
+							<execute>geany ~/.moc/themes/MoC_limpio</execute>
+						</action>
+					</item>
+				</menu>
+				<menu id="root-menu-841349-301415-24957" label="SCRIPTS">
+					<item label="CALENDARIO.PY">
+						<action name="Execute">
+							<execute>geany ~/.conky/scripts/calendario.py</execute>
+						</action>
+					</item>
+					<item label="OBMOCMENU">
+						<action name="Execute">
+							<execute>geany ~/.config/openbox/pipemenus/obmocmenu</execute>
+						</action>
+					</item>
+					<item label="THUNARBOOKMARKS">
+						<action name="Execute">
+							<execute>geany ~/.config/openbox/pipemenus/thunarbookmarks</execute>
+						</action>
+					</item>
+				</menu>
+				<item label="XMOBAR">
+					<action name="Execute">
+						<execute>geany ~/.xmobarrc</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="root-menu-841349-162043" label="APARIENCIA">
+				<item label="VENTANAS E ICONOS">
+					<action name="Execute">
+						<execute>lxappearance</execute>
+					</action>
+				</item>
+				<item label="FONDO DE PANTALLA">
+					<action name="Execute">
+						<execute>nitrogen</execute>
+					</action>
+				</item>
+				<item label="PANEL">
+					<action name="Execute">
+						<execute>tint2conf</execute>
+					</action>
+				</item>
+				<item label="MENU">
+					<action name="Execute">
+						<execute>obmenu</execute>
+					</action>
+				</item>
+				<item label="EFECTOS">
+					<action name="Execute">
+						<execute>compton-conf</execute>
+					</action>
+				</item>
+			</menu>
+			<item label="ATAJOS DE TECLADO">
+				<action name="Execute">
+					<execute>lxhotkey</execute>
+				</action>
+			</item>
+			<item label="MONITOR">
+				<action name="Execute">
+					<execute>lxrandr</execute>
+				</action>
+			</item>
+			<item label="ENERGIA">
+				<action name="Execute">
+					<execute>xfce4-power-manager-settings</execute>
+				</action>
+			</item>
+			<item label="NOTIFICACIONES">
+				<action name="Execute">
+					<execute>xfce4-notifyd-config</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-223410" label="SOFTWARE">
+			<item label="GESTOR DE PAQUETES">
+				<action name="Execute">
+					<execute>lxterminal -e sudo synaptic</execute>
+				</action>
+			</item>
+			<item label="ACTUALIZAR">
+				<action name="Execute">
+					<execute>update-manager</execute>
+				</action>
+			</item>
+			<item label="PROPIEDADES DEL SOFTWARE">
+				<action name="Execute">
+					<execute>lxterminal -e sudo -i software-properties-gtk</execute>
+				</action>
+			</item>
+			<item label="SOFTWARE DE WINDOWS">
+				<action name="Execute">
+					<execute>playonlinux</execute>
+				</action>
+			</item>
+			<item label="EMULADOR VIRTUAL">
+				<action name="Execute">
+					<execute>virtualbox</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-613714" label="MANTENIMIENTO">
+			<item label="LIMPIEZA USUARIO">
+				<action name="Execute">
+					<execute>bleachbit</execute>
+				</action>
+			</item>
+			<item label="LIMPIEZA ROOT">
+				<action name="Execute">
+					<execute>lxterminal -e sudo -i bleachbit</execute>
+				</action>
+			</item>
+			<item label="DISCOS DUROS">
+				<action name="Execute">
+					<execute>gnome-disks</execute>
+				</action>
+			</item>
+			<item label="GESTOR DE TAREAS">
+				<action name="Execute">
+					<execute>lxtask</execute>
+				</action>
+			</item>
+		</menu>
+		<separator label="SALIR"/>
+		<item label="CERRAR SESION">
+			<action name="Exit"/>
+		</item>
+		<item label="REINICIAR">
+			<action name="Execute">
+				<execute>shutdown -r now</execute>
+			</action>
+		</item>
+		<menu id="root-menu-293625" label="APAGAR">
+			<item label="AHORA">
+				<action name="Execute">
+					<execute>shutdown -h now</execute>
+				</action>
+			</item>
+			<item label="NOCTURNO">
+				<action name="Execute">
+					<execute>shutdown -h 222</execute>
+				</action>
+			</item>
+		</menu>
+	</menu>
+</openbox_menu>
