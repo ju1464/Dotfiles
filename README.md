@@ -1,2 +1,2 @@
 # Dotfiles
-Openbox configuration files.
+Openbox, i3, moc, conky and others configuration files.
