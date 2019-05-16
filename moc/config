@@ -1,14 +1,13 @@
-# Configuracion del reproductor moc
-# Ruta /home/usuario/.moc/config
-
 # This is a configuration file for the MOC player.  It should be named
 # 'config' and placed in the ~/.moc directory.  As this file can specify
 # commands which invoke other applications, MOC will refuse to start if it
 # is not owned by either root or the current user, or if it is writable by
-# anyone other than its owner.  All options are given with their default
-# values, and therefore commented.
+# anyone other than its owner.
 
-# Comments begin with '#'.
+# Comments begin with '#'.  All options are given with their default
+# values, and therefore commented.  If you change the value from the
+# default you must uncomment the line to have the new value take effect.
+#
 # You can use quotes and escape ('\') in parameters.
 #
 # You can have variable values substituted by enclosing the variable name
@@ -72,11 +71,12 @@ ReadTags = yes
 #
 # Example:    MusicDir = "/home/joe/music"
 #
-MusicDir = "/home/usuario/Música/"
+MusicDir = "/home/usuario/Música/"t
 
 # Start in the music directory by default?  If set to 'no', start
-# in the current directory by default.  A single directory on
-# the command line takes precedence.
+# in the directory being viewed when the was client last active or,
+# as a last resort, the directory in which the client is being started.
+# A single directory on the command line takes precedence.
 StartInMusicDir = yes
 
 # The number of lines which are retained in an in-memory circular logging
@@ -164,6 +164,20 @@ Shuffle = yes
 #ALSAMixer1 = PCM
 #ALSAMixer2 = Master
 
+# Under some circumstances on 32-bit systems, audio played continously
+# for long periods of time may begin to stutter.  Setting this option to
+# 'yes' will force MOC to avoid ALSA's dmix resampling and prevent this
+# stutter.  But it also has other implications:
+#
+# - You may experience unacceptably high CPU load.
+# - ALSA's resampler plug-ins will not be used.
+# - The resampling may be of lower quality than ALSA would provide.
+# - You may need to try different "ResampleMethod" option settings.
+# - The "ForceSampleRate" option may be ineffective.
+# - If libsamplerate is not configured, many audios may be unplayable.
+#
+#ALSAStutterDefeat = no
+
 # Save software mixer state?
 # If enabled, a file 'softmixer' will be created in '~/.moc/' storing the
 # mixersetting set when the server is shut down.
@@ -222,6 +236,7 @@ Shuffle = yes
 # Example:    Theme = laras_theme
 #
 Theme = MoC_limpio
+
 # The theme used when running on an xterm.
 #
 # Example:    XTermTheme = transparent-background
@@ -266,6 +281,9 @@ Theme = MoC_limpio
 
 # Enable the conversion of the xterm title from UTF-8 to the local encoding.
 #NonUTFXterm = no
+
+# Should MOC precache files to assist gapless playback?
+#Precache = yes
 
 # Remember the playlist after exit?
 #SavePlaylist = yes
@@ -378,10 +396,11 @@ Theme = MoC_limpio
 # audio), while the MIME media types will cause Internet audio streams to
 # be assessed on content (which may be either Vorbis or Speex).
 #
-#PreferredDecoders += ogg(vorbis,ffmpeg):oga(vorbis,ffmpeg):ogv(ffmpeg)
+#PreferredDecoders += ogg(vorbis,*,ffmpeg):oga(vorbis,*,ffmpeg):ogv(ffmpeg)
+#PreferredDecoders += application/ogg(vorbis):audio/ogg(vorbis)
+#PreferredDecoders += flac(flac,*,ffmpeg)
 #PreferredDecoders += opus(opus,ffmpeg)
 #PreferredDecoders += spx(speex)
-#PreferredDecoders += application/ogg(vorbis):audio/ogg(vorbis)
 
 # Which resampling method to use.  There are a few methods of resampling
 # sound supported by libresamplerate.  The default is 'Linear') which is
@@ -673,7 +692,16 @@ CanStartInPlaylist = yes
 
 # Run the OnStop command (full path, no arguments) when MOC changes state
 # to stopped (i.e., when user stopped playing or changes a song).
-#OnStop = "/home/jack/.moc/myscript_on_stop"
+#
+# Example:    OnStop = "/home/jack/.moc/myscript_on_stop"
+#
+#OnStop =
+
+# Run the OnServerStart or OnServerStop commands (full path, no arguments)
+# when MOC server is started or terminated respectively.  The server will
+# not wait for the commands to complete before continuing.
+#OnServerStart =
+#OnServerStop =
 
 # This option determines which song to play after finishing all the songs
 # in the queue.  Setting this to 'yes' causes MOC to play the song which
